@@ -11,6 +11,10 @@ This is an Angular project that allows users to input minimum and maximum temper
 - Form validation for minimum and maximum temperature values.
 - Error messages displayed on form submission.
 
+## Screenshoot
+
+![Image](app-screen-shoot.png)
+
 ## Development
 
 Run `npm install` to create the node_modules foder, then run `npm start`  for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
