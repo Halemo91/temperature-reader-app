@@ -7,7 +7,7 @@ import { TemperatureInput } from '../../models/temperature-input';
   templateUrl: './temperature-reader.page.html',
   styleUrls: ['./temperature-reader.page.css'],
 })
-export class TemperatureReaderPage{
+export class TemperatureReaderPage {
   minTemperature!: number;
   maxTemperature!: number;
   targetTemperature!: number;
@@ -23,7 +23,7 @@ export class TemperatureReaderPage{
     }
   }
 
-  onTemperatureFormIsInvalid(isValid: boolean){
+  onTemperatureFormIsInvalid(isValid: boolean) {
     this.hideTemperatureValues = isValid;
   }
 }

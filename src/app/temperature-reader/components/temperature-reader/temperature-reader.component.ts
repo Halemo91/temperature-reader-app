@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './temperature-reader.component.html',
   styleUrls: ['./temperature-reader.component.css'],
 })
-export class TemperatureReaderComponent{
+export class TemperatureReaderComponent {
   @Input()
   minTemperature?: number;
   @Input()
@@ -22,8 +22,8 @@ export class TemperatureReaderComponent{
   calculateTargetTemperatureRotation(): string {
     if (
       this.minTemperature == null ||
-      this.maxTemperature  == null ||
-      this.targetTemperature == null 
+      this.maxTemperature == null ||
+      this.targetTemperature == null
     ) {
       return '';
     }
@@ -51,7 +51,7 @@ export class TemperatureReaderComponent{
     return (
       this.minTemperature != null &&
       this.maxTemperature != null &&
-      this.targetTemperature!= null &&
+      this.targetTemperature != null &&
       !this.hideTemperatureValues
     );
   }
