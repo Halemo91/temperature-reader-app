@@ -1,7 +1,9 @@
 <div style="padding: 150px;">
+  <app-temperature-input (temperatureValues)="onTemperatureValuesChanges($event)"></app-temperature-input>
+
   <temperature-reader 
-  [minTemperature]="0"
-  [maxTemperature]="100"
-  [targetTemperature]="50"
+  [minTemperature]="minTemperature"
+  [maxTemperature]="maxTemperature"
+  [targetTemperature]="targetTemperature"
   ></temperature-reader>
 </div>

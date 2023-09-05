@@ -1,0 +1,18 @@
+<form [formGroup]="temperatureForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="minTemperature">Minimum Temperature (°C)</label>
+    <input type="number" id="minTemperature" formControlName="minTemperature">
+  </div>
+
+  <div class="form-group">
+    <label for="maxTemperature">Maximum Temperature (°C)</label>
+    <input type="number" id="maxTemperature" formControlName="maxTemperature">
+  </div>
+
+  <div class="form-group">
+    <label for="targetTemperature">Target Temperature (°C)</label>
+    <input type="number" id="targetTemperature" formControlName="targetTemperature">
+  </div>
+
+  <button type="submit" [disabled]="!temperatureForm.valid">Submit</button>
+</form>
