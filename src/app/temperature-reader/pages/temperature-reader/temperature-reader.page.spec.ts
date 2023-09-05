@@ -1,6 +1,6 @@
 import { MatInputModule } from '@angular/material/input';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TemperatureReaderPage } from './temperature-reader.page';
 import { TemperatureInput } from '../../models/temperature-input';
@@ -18,7 +18,7 @@ describe('TemperatureReaderPage', () => {
         TemperatureInputComponent,
         TemperatureReaderComponent,
       ],
-      imports: [FormsModule, ReactiveFormsModule, MatInputModule],
+      imports: [ReactiveFormsModule, MatInputModule],
     });
 
     fixture = TestBed.createComponent(TemperatureReaderPage);

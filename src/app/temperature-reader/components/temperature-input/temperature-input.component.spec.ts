@@ -3,7 +3,7 @@ import { MatInputModule } from '@angular/material/input';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TemperatureInputComponent } from './temperature-input.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('TemperatureInputComponent', () => {
   let component: TemperatureInputComponent;
@@ -13,7 +13,6 @@ describe('TemperatureInputComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ TemperatureInputComponent ],
       imports: [
-        FormsModule,
         ReactiveFormsModule,
         MatInputModule
       ]
