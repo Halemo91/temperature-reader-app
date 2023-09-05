@@ -6,5 +6,5 @@
     <div class="min-line"> </div>
     <div class="max-line"> </div>
   </div>
-  <div  *ngIf="targetTemperature"  class="temperature-text">{{ targetTemperature }}°C</div>
+  <div  *ngIf="targetTemperature && !hideTemperatureValues"  class="temperature-text">{{ targetTemperature }}°C</div>
 </div>

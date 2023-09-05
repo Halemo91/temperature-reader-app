@@ -12,6 +12,8 @@ export class TemperatureReaderComponent{
   maxTemperature?: number;
   @Input()
   targetTemperature?: number;
+  @Input()
+  hideTemperatureValues = false;
 
   /**
    * Calculates the CSS rotation value for the target temperature indicator.
@@ -49,7 +51,8 @@ export class TemperatureReaderComponent{
     return (
       this.minTemperature != null &&
       this.maxTemperature != null &&
-      this.targetTemperature!= null 
+      this.targetTemperature!= null &&
+      !this.hideTemperatureValues
     );
   }
 }

@@ -16,6 +16,8 @@ import { TemperatureForm } from '../../models/temperature-form';
 })
 export class TemperatureInputComponent {
   @Output() temperatureValues = new EventEmitter<TemperatureInput>();
+  @Output() temperatureFormInvalid = new EventEmitter<boolean>();
+
 
   temperatureForm: FormGroup<TemperatureForm>;
   formSubmitted = false;
@@ -26,13 +28,16 @@ export class TemperatureInputComponent {
 
   errorMessages(inputControl?: AbstractControl): string {
     if (inputControl?.hasError('required') && this.formSubmitted) {
+      this.temperatureFormInvalid.emit(true)
       return 'This field is required';
     }
     if (inputControl?.hasError('invalidRange')) {
+      this.temperatureFormInvalid.emit(true)
       return 'Invalid range';
     }
 
     if (inputControl?.hasError('outOfRange')) {
+      this.temperatureFormInvalid.emit(true)
       return 'Target Temperature is out of range';
     }
     return '';
@@ -50,6 +55,7 @@ export class TemperatureInputComponent {
     if (this.temperatureForm?.valid) {
       const { minTemperature, maxTemperature, targetTemperature } =
         this.temperatureForm.getRawValue();
+      this.temperatureFormInvalid.emit(false)
       this.temperatureValues.emit({
         minTemperature,
         maxTemperature,

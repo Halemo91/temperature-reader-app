@@ -1,9 +1,16 @@
 <div class="temperature-reader-container">
-  <app-temperature-input (temperatureValues)="onTemperatureValuesChanges($event)"></app-temperature-input>
+  <app-temperature-input
+   (temperatureValues)="onTemperatureValuesChanges($event)"
+   (temperatureFormInvalid)="onTemperatureFormIsInvalid($event)"
+   >
+
+  </app-temperature-input>
 
   <app-temperature-reader 
   [minTemperature]="minTemperature"
   [maxTemperature]="maxTemperature"
-  [targetTemperature]="targetTemperature">
+  [targetTemperature]="targetTemperature"
+  [hideTemperatureValues]="hideTemperatureValues"
+  >
   </app-temperature-reader>
 </div>
