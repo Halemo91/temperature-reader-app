@@ -1,30 +1,30 @@
 <form [formGroup]="temperatureForm" (ngSubmit)="submitForm()" class="temperature-form">
   <!-- Min Temperature -->
-  <div class="form-group">
-    <label for="minTemperature">Minimum Temperature (°C) *</label>
-    <input type="number" id="minTemperature" formControlName="minTemperature"  [required]="true">
-    <mat-error>
+  <div class="temperature-form__group">
+    <label for="minTemperature" class="temperature-form__label">Minimum Temperature (°C) *</label>
+    <input type="number" id="minTemperature" formControlName="minTemperature" class="temperature-form__input" [required]="true">
+    <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.minTemperature) }}
     </mat-error>
   </div>
 
   <!-- Max Temperature -->
-  <div class="form-group">
-    <label for="maxTemperature">Maximum Temperature (°C ) *</label>
-    <input type="number" id="maxTemperature" formControlName="maxTemperature"  [required]="true">
-    <mat-error>
+  <div class="temperature-form__group">
+    <label for="maxTemperature" class="temperature-form__label">Maximum Temperature (°C ) *</label>
+    <input type="number" id="maxTemperature" formControlName="maxTemperature" class="temperature-form__input" [required]="true">
+    <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.maxTemperature) }}
     </mat-error>
   </div>
 
   <!-- Target Temperature -->
-  <div class="form-group">
-    <label for="targetTemperature">Target Temperature (°C) *</label>
-    <input type="number" id="targetTemperature" formControlName="targetTemperature"  [required]="true">
-    <mat-error>
+  <div class="temperature-form__group">
+    <label for="targetTemperature" class="temperature-form__label">Target Temperature (°C) *</label>
+    <input type="number" id="targetTemperature" formControlName="targetTemperature" class="temperature-form__input" [required]="true">
+    <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.targetTemperature) }}
     </mat-error>
   </div>
 
-  <button class="submit-button" type="submit" [disabled]="!temperatureForm.valid">Submit</button>
+  <button class="temperature-form__submit-button" type="submit" [disabled]="!temperatureForm.valid">Submit</button>
 </form>

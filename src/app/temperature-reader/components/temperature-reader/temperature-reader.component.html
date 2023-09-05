@@ -1,10 +1,10 @@
 <div class="temperature-indicator">
-  <div class="temperature-circle">
-    <div *ngIf="areInputsValid()"  class="target-line" [style.transform]="calculateTargetTemperatureRotation()"></div>
+  <div class="temperature-indicator__circle">
+    <div *ngIf="areInputsValid()" class="temperature-indicator__target-line" [style.transform]="calculateTargetTemperatureRotation()"></div>
   </div>
-  <div class="min-max-lines">
-    <div class="min-line"> </div>
-    <div class="max-line"> </div>
+  <div class="temperature-indicator__min-max-lines">
+    <div class="temperature-indicator__min-line"></div>
+    <div class="temperature-indicator__max-line"></div>
   </div>
-  <div  *ngIf="targetTemperature !== null && !hideTemperatureValues"  class="temperature-text">{{ targetTemperature }}°C</div>
+  <div *ngIf="targetTemperature !== null && !hideTemperatureValues" class="temperature-indicator__text">{{ targetTemperature }}°C</div>
 </div>

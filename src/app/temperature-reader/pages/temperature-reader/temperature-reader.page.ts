@@ -23,7 +23,7 @@ export class TemperatureReaderPage {
     }
   }
 
-  onTemperatureFormIsInvalid(isValid: boolean) {
-    this.hideTemperatureValues = isValid;
+  onTemperatureFormIsInvalid(isInValid: boolean) {
+    this.hideTemperatureValues = isInValid;
   }
 }

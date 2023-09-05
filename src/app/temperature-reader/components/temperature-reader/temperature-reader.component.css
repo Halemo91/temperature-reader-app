@@ -1,12 +1,13 @@
+
 .temperature-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.temperature-circle {
+.temperature-indicator__circle {
   position: relative;
-  width: 250px; /* Adjust the circle size as needed */
+  width: 250px;
   height: 250px;
   border-radius: 50%;
   background-color: #f0f0f0;
@@ -16,30 +17,31 @@
   transform: rotate(-90deg);
 }
 
-.target-line {
+.temperature-indicator__target-line {
   width: 2px;
-  height: 50%; /* Adjust the line's length as needed */
-  background-color: red; /* Adjust the color as needed */
+  height: 50%; 
+  background-color: red; 
   transform-origin: bottom;
 }
 
-.min-max-lines {
+
+.temperature-indicator__min-max-lines {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 180px; /* Adjust as needed */
+  max-width: 180px;
   margin-bottom: 10px;
   position: relative;
   bottom: 45px;
 }
 
-.min-line,
-.max-line {
+.temperature-indicator__min-line,
+.temperature-indicator__max-line {
   position: relative;
 }
 
-.max-line::before,
-.min-line::before {
+.temperature-indicator__max-line::before,
+.temperature-indicator__min-line::before {
   content: "";
   position: absolute;
   width: 1px;
@@ -50,15 +52,16 @@
   transform-origin: 0% 50%;
 }
 
-.max-line::before {
-  transform: translateX(-50%) rotate(-45deg); /* Adjust the rotation angle as needed */
+.temperature-indicator__max-line::before {
+  transform: translateX(-50%) rotate(-45deg); 
 }
 
-.min-line::before {
-  transform: translateX(-50%) rotate(45deg); /* Adjust the rotation angle as needed */
+
+.temperature-indicator__min-line::before {
+  transform: translateX(-50%) rotate(45deg); 
 }
 
-.temperature-text {
+.temperature-indicator__text {
   margin-top: 5px;
   margin-bottom: 5px;
 }

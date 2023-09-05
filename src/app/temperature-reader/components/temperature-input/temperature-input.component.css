@@ -4,14 +4,14 @@
   padding: 20px;
 }
 
-.form-group {
+.temperature-form__group {
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.submit-button {
+.temperature-form__submit-button {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -19,16 +19,16 @@
   cursor: pointer;
 }
 
-.submit-button:disabled {
+.temperature-form__submit-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-label {
+.temperature-form__label {
   margin-right: 20px;
   width: 250px;
 }
 
-mat-error {
+.temperature-form__error {
   margin-left: 20px;
 }
