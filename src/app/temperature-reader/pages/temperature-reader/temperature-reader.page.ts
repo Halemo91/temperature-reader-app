@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TemperatureInput } from '../../models/temperature-input';
 
 @Component({
@@ -6,16 +6,15 @@ import { TemperatureInput } from '../../models/temperature-input';
   templateUrl: './temperature-reader.page.html',
   styleUrls: ['./temperature-reader.page.css'],
 })
-export class TemperatureReaderPage implements OnInit {
+export class TemperatureReaderPage{
   minTemperature!: number;
   maxTemperature!: number;
   targetTemperature!: number;
 
   constructor() {}
 
-  ngOnInit() {}
 
-  onTemperatureValuesChanges(values: TemperatureInput) {
+  onTemperatureValuesChanges(values?: TemperatureInput) {
     if (values) {
       this.minTemperature = values.minTemperature;
       this.maxTemperature = values.maxTemperature;

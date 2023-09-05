@@ -1,19 +1,17 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'temperature-reader',
+  selector: 'app-temperature-reader',
   templateUrl: './temperature-reader.component.html',
-  styleUrls: ['./temperature-reader.component.scss'],
+  styleUrls: ['./temperature-reader.component.css'],
 })
-export class TemperatureReaderComponent   {
+export class TemperatureReaderComponent{
   @Input()
   minTemperature?: number;
   @Input()
   maxTemperature?: number;
   @Input()
   targetTemperature?: number;
-
-
 
   /**
    * Calculates the CSS rotation value for the target temperature indicator.

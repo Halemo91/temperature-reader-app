@@ -1,18 +1,30 @@
-<form [formGroup]="temperatureForm" (ngSubmit)="submitForm()">
+<form [formGroup]="temperatureForm" (ngSubmit)="submitForm()" class="temperature-form">
+  <!-- Min Temperature -->
   <div class="form-group">
-    <label for="minTemperature">Minimum Temperature (°C)</label>
-    <input type="number" id="minTemperature" formControlName="minTemperature">
+    <label for="minTemperature">Minimum Temperature (°C) *</label>
+    <input type="number" id="minTemperature" formControlName="minTemperature"  [required]="true">
+    <mat-error>
+      {{ errorMessages(temperatureForm.controls.minTemperature) }}
+    </mat-error>
   </div>
 
+  <!-- Max Temperature -->
   <div class="form-group">
-    <label for="maxTemperature">Maximum Temperature (°C)</label>
-    <input type="number" id="maxTemperature" formControlName="maxTemperature">
+    <label for="maxTemperature">Maximum Temperature (°C ) *</label>
+    <input type="number" id="maxTemperature" formControlName="maxTemperature"  [required]="true">
+    <mat-error>
+      {{ errorMessages(temperatureForm.controls.maxTemperature) }}
+    </mat-error>
   </div>
 
+  <!-- Target Temperature -->
   <div class="form-group">
-    <label for="targetTemperature">Target Temperature (°C)</label>
-    <input type="number" id="targetTemperature" formControlName="targetTemperature">
+    <label for="targetTemperature">Target Temperature (°C) *</label>
+    <input type="number" id="targetTemperature" formControlName="targetTemperature"  [required]="true">
+    <mat-error>
+      {{ errorMessages(temperatureForm.controls.targetTemperature) }}
+    </mat-error>
   </div>
 
-  <button type="submit" [disabled]="!temperatureForm.valid">Submit</button>
+  <button class="submit-button" type="submit" [disabled]="!temperatureForm.valid">Submit</button>
 </form>

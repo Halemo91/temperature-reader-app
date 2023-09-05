@@ -1,0 +1,33 @@
+.temperature-form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+label{
+   margin-right: 20px;
+}
+
+mat-error {
+   margin-left: 20px;
+}
