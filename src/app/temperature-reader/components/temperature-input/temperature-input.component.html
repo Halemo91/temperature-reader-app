@@ -2,7 +2,7 @@
   <!-- Min Temperature -->
   <div class="temperature-form__group">
     <label for="minTemperature" class="temperature-form__label">Minimum Temperature (°C) *</label>
-    <input type="number" id="minTemperature" formControlName="minTemperature" class="temperature-form__input" [required]="true">
+    <input type="number" id="minTemperature" formControlName="minTemperature" class="temperature-form__input">
     <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.minTemperature) }}
     </mat-error>
@@ -11,7 +11,7 @@
   <!-- Max Temperature -->
   <div class="temperature-form__group">
     <label for="maxTemperature" class="temperature-form__label">Maximum Temperature (°C ) *</label>
-    <input type="number" id="maxTemperature" formControlName="maxTemperature" class="temperature-form__input" [required]="true">
+    <input type="number" id="maxTemperature" formControlName="maxTemperature" class="temperature-form__input">
     <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.maxTemperature) }}
     </mat-error>
@@ -20,7 +20,7 @@
   <!-- Target Temperature -->
   <div class="temperature-form__group">
     <label for="targetTemperature" class="temperature-form__label">Target Temperature (°C) *</label>
-    <input type="number" id="targetTemperature" formControlName="targetTemperature" class="temperature-form__input" [required]="true">
+    <input type="number" id="targetTemperature" formControlName="targetTemperature" class="temperature-form__input">
     <mat-error class="temperature-form__error">
       {{ errorMessages(temperatureForm.controls.targetTemperature) }}
     </mat-error>
