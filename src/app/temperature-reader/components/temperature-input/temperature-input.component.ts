@@ -8,6 +8,7 @@ import {
 
 import { TemperatureInput } from '../../models/temperature-input';
 import { TemperatureForm } from '../../models/temperature-form';
+import { TemperatureValidators } from '../../models/temperature-validators';
 
 @Component({
   selector: 'app-temperature-input',
@@ -25,49 +26,17 @@ export class TemperatureInputComponent {
     this.temperatureForm = this.createTemperatureForm();
   }
 
-  validateTemperatureRange(formGroup: FormGroup | null) {
-    if (!formGroup) return;
-
-    const minTempControl = formGroup.get('minTemperature');
-    const maxTempControl = formGroup.get('maxTemperature');
-    const targetTempControl = formGroup.get('targetTemperature');
-
-    if (
-      minTempControl?.value == null ||
-      maxTempControl?.value == null ||
-      targetTempControl?.value == null
-    )
-      return;
-
-    const minTemp = minTempControl.value;
-    const maxTemp = maxTempControl.value;
-    const targetTemp = targetTempControl.value;
-
-    if (minTemp > maxTemp) {
-      minTempControl.setErrors({ invalidRange: true });
-      maxTempControl.setErrors({ invalidRange: true });
-    } else {
-      minTempControl.setErrors(null);
-      maxTempControl.setErrors(null);
-    }
-    if (targetTemp < minTemp || targetTemp > maxTemp) {
-      targetTempControl.setErrors({ outOfRange: true });
-    } else {
-      targetTempControl.setErrors(null);
-    }
-  }
-
   errorMessages(inputControl?: AbstractControl): string {
     if (inputControl?.hasError('required') && this.formSubmitted) {
       this.temperatureFormInvalid.emit(true);
       return 'This field is required';
     }
-    if (inputControl?.hasError('invalidRange')) {
+    if (inputControl?.hasError('minTemperatureGreaterThanMax')) {
       this.temperatureFormInvalid.emit(true);
       return 'Invalid range';
     }
 
-    if (inputControl?.hasError('outOfRange')) {
+    if (inputControl?.hasError('targetTemperatureOutOfRange')) {
       this.temperatureFormInvalid.emit(true);
       return 'Target Temperature is out of range';
     }
@@ -89,15 +58,27 @@ export class TemperatureInputComponent {
   }
 
   private createTemperatureForm(): FormGroup {
-    return this.formBuilder.group(
-      {
-        minTemperature: [null, Validators.required],
-        maxTemperature: [null, Validators.required],
-        targetTemperature: [null, Validators.required],
-      },
-      {
-        validators: this.validateTemperatureRange.bind(this),
-      }
-    );
+    const maxTemperatureControl = this.formBuilder.control(null, [
+      Validators.required,
+    ]);
+    const minTemperatureControl = this.formBuilder.control(null, [
+      Validators.required,
+      TemperatureValidators.minTemperatureLessThanMaxValidator(
+        maxTemperatureControl
+      ),
+    ]);
+    const targetTemperatureControl = this.formBuilder.control(null, [
+      Validators.required,
+      TemperatureValidators.targetTemperatureValidator(
+        minTemperatureControl,
+        maxTemperatureControl
+      ),
+    ]);
+
+    return this.formBuilder.group({
+      minTemperature: minTemperatureControl,
+      maxTemperature: maxTemperatureControl,
+      targetTemperature: targetTemperatureControl,
+    });
   }
 }
