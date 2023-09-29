@@ -1,4 +1,4 @@
-# Angular Temperature Reader
+# Angular Temperature Reader (Done)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 This is an Angular project that allows users to input minimum and maximum temperature values and a target temperature. It displays these values in a temperature indicator component with a visual representation of the target temperature.
